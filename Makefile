@@ -1,11 +1,11 @@
 .PHONY: install
 install:
-	@poetry install 
+	@poetry install
 
 .PHONY: run
 run:
 	@poetry run python main.py
 
 .PHONY: test
-test: 
+test:
 	@poetry run python -m pytest -vv
