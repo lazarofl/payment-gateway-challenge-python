@@ -12,4 +12,15 @@ services:
       - type: bind
         source: ./imposters
         target: /imposters
-      
+
+  payment_gateway:
+    container_name: payment_gateway
+    ports:
+      - "8000:8000"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - bank_simulator
+    environment:
+      - BANK_SIMULATOR_URL=http://localhost:8080
