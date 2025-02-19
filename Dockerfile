@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y make && pip install --upgrade pip && pi
 COPY pyproject.toml poetry.lock* /app/
 
 # install packages into the system environment
-RUN poetry config virtualenvs.create false && poetry install --no-dev
+RUN poetry config virtualenvs.create false && poetry install
 
 COPY . .
 

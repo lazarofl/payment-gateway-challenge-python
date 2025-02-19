@@ -36,7 +36,7 @@ class DummyAsyncClient:
         return DummyResponse(self.authorized)
 
 
-class TestPaymentAPI(unittest.TestCase):
+class TestUnitPaymentGateway(unittest.TestCase):
 
     @patch("payment_gateway_api.app.httpx.AsyncClient")
     def test_process_payment_authorized(self, mock_async_client):
